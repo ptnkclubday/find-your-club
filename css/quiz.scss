@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --swiper-navigation-color: #ffffff;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #01b9c5 0%, #016e78 100%);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: url(../img/waves.svg);
+  background-size: 100% 20%;
+  background-repeat: repeat no-repeat;
+  background-position-y: bottom;
+}
+
+section .wave1 {
+  animation: animate 10s linear infinite;
+  z-index: 2;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0%;
+}
+
+section .wave2 {
+  animation: animate2 15s linear infinite;
+  z-index: 1;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 5%;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: +100vw;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
+}
+
+@font-face {
+  font-family: "Sifonn Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Sifonn Pro"), url("SIFONN_PRO.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SVN Gilroy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SVN Gilroy"),
+    url("../font/SVN-Gilroy Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SVN Gilroy Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/SVN-Gilroy Bold.otf") format("opentype");
+}
+
+.swiper-container {
+  width: 70em;
+  height: 40em;
+  margin-top: 2.5em;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-container {
+  margin: 0 2em;
+  width: 65em;
+  height: 30em;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.question-image {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+}
+
+.question {
+  font-family: "SVN Gilroy Bold";
+  font-size: 2em;
+  padding: 2.5em;
+}
+
+.answer-container {
+  position: relative;
+}
+
+.swiper-container-small {
+  width: 100%;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+}
+
+.small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.option {
+  font-family: "SVN Gilroy";
+  color: white;
+  font-size: 1.8em;
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 185, 197, 0.7);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result,
+.result-statement {
+  font-family: "SVN Gilroy";
+  text-emphasis: center;
+  vertical-align: middle;
+  color: white;
+}
+.result-statement {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+.result {
+  font-size: 4em;
+  text-transform: uppercase;
+  margin: 0em 2em;
+  line-height: 1.2em;
+}
+
+.result-logo {
+  border-radius: 100%;
+  width: 25%;
+  height: 25%;
+  cursor: pointer;
+}
+
+.logo-slide {
+  margin: 1.5em;
+  padding-top: 4em;
+  text-align: center;
+  line-height: 4em;
+}
+
+h3 {
+  font-family: "SVN Gilroy";
+  font-size: 2em;
+  margin-top: 1em;
+  border-radius: 20px;
+  width: 50%;
+  background-color: #016e78;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    font-size: 4px;
+  }
+  .swiper-container {
+    width: 80em;
+    height: 300em;
+    margin-top: 6em;
+  }
+  .question-container {
+    margin: 10em 5.5em;
+    width: 68em;
+    height: 100em;
+  }
+  .question {
+    font-size: 4em;
+    line-height: 2em;
+  }
+  .option {
+    font-size: 4em;
+    width: 10em;
+    height: 2em;
+  }
+
+  .result,
+  .result-statement {
+    margin-bottom: 4em;
+  }
+  .result-statement {
+    padding-top: 5em;
+    font-size: 4em;
+    margin-bottom: 2em;
+  }
+  .result {
+    font-size: 6em;
+    margin: 1em 1em;
+    line-height: 1.2em;
+  }
+
+  .result-logo {
+    border-radius: 100%;
+    width: 30em;
+    height: 30em;
+  }
+
+  .logo-slide {
+    margin: 1.5em;
+    padding-top: 4em;
+    line-height: 4em;
+  }
+
+  h3 {
+    font-size: 4em;
+    margin-top: 1em;
+    border-radius: 20px;
+    width: 50%;
+    height: 5em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  body {
+    font-size: 3px;
+  }
+  .swiper-container {
+    width: 100em;
+    height: 300em;
+    margin-top: 10em;
+  }
+  .question-container {
+    margin: 10em 7em;
+    width: 85em;
+    height: 100em;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2),
+      15px 15px 15px rgba(0, 0, 0, 0.2);
+  }
+  .question {
+    font-size: 5em;
+  }
+  .option {
+    font-size: 4em;
+    width: 10em;
+    height: 2em;
+  }
+}
