@@ -185,7 +185,7 @@ section .wave2 {
 }
 
 .option {
-  font-family: "SVN-Gilroy";
+  font-family: "SVN Gilroy";
   color: white;
   font-size: 1.8em;
   width: 10em;
@@ -241,7 +241,7 @@ section .wave2 {
 }
 
 h3 {
-  font-family: "SVN-Gilroy";
+  font-family: "SVN Gilroy";
   font-size: 2em;
   margin-top: 1em;
   border-radius: 20px;
