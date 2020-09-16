@@ -102,7 +102,7 @@ section .wave2 {
   font-family: "SVN Gilroy Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("SVN Gilroy Bold"), url("../font/SVN-Gilroy Bold.otf") format("opentype");
+  src: url("../font/SVN-Gilroy Bold.otf") format("opentype");
 }
 
 .swiper-container {
