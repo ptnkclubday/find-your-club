@@ -6,7 +6,13 @@ var question = [
   "Trong làm việc nhóm, bạn là:",
 ];
 
-var question_image = ["", "", "", "img/nk_corner.jpeg", "img/nk_people.jpeg"];
+var question_image = [
+  "img/nk_vert.jpg",
+  "",
+  "",
+  "img/nk_corner.jpeg",
+  "img/nk_people.jpeg",
+];
 
 var answer_sample = [
   ["Hướng nội", "Hướng ngoại"],
@@ -67,6 +73,24 @@ clubs = [
   ["TPT", "Tổ Phát Thanh", "https://www.facebook.com/tophatthanhptnk"],
 ];
 
+var answer_style = [
+  [],
+  [
+    "rgba(255, 0, 0, 0.6)",
+    "rgba(255, 82, 0, 0.7)",
+    "rgba(252, 186, 3, 0.9)",
+    "rgba(15, 252, 3, 0.7)",
+    "rgba(1, 185, 197, 0.7)",
+    "rgba(3, 20, 252, 0.7)",
+    "rgba(128, 3, 252, 0.7)",
+    "rgba(0, 0, 0, 0.7)",
+    "linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(226,236,55,1) 12%, rgba(57,134,45,1) 26%, rgba(47,148,130,1) 40%, rgba(35,90,165,1) 55%, rgba(60,25,190,1) 71%, rgba(214,38,196,1) 83%)",
+  ],
+  [],
+  [],
+  [],
+];
+
 var big_wrapper = document.getElementsByClassName("big-wrapper")[0];
 
 function setUpQuest(statement, index) {
@@ -84,13 +108,16 @@ function setUpQuest(statement, index) {
   new_small_container.className += "swiper-container-small";
   var new_wrapper = document.createElement("div");
   new_wrapper.className += "swiper-wrapper";
-  answer_sample[index].forEach((element) => {
+  answer_sample[index].forEach(function (element, elem_index) {
     var new_ans_slide = document.createElement("div");
     new_ans_slide.className += "swiper-slide";
     new_ans_slide.className += " small";
     var option = document.createElement("p");
     option.className = "option";
     option.innerHTML = element;
+    if (answer_style[index] != []) {
+      option.style.background = answer_style[index][elem_index];
+    }
     new_ans_slide.appendChild(option);
     new_wrapper.appendChild(new_ans_slide);
   });
@@ -111,7 +138,11 @@ function setUpQuest(statement, index) {
   new_answer_container.appendChild(new_small_container);
   //Time to append all of it!
   new_question_container.appendChild(new_question_statement);
-  new_question_container.appendChild(new_question_image);
+  if (question_image[index] == "") {
+  } else {
+    new_question_container.appendChild(new_question_image);
+  }
+
   new_slide.appendChild(new_question_container);
   new_slide.appendChild(new_answer_container);
 
