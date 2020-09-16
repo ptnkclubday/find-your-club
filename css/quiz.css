@@ -95,14 +95,14 @@ section .wave2 {
   font-family: "SVN Gilroy";
   font-style: normal;
   font-weight: normal;
-  src: local("SVN Gilroy"), url("/font/SVN-Gilroy Light.otf") format("opentype");
+  src: local("SVN Gilroy"), url("../font/SVN-Gilroy Light.otf") format("opentype");
 }
 
 @font-face {
   font-family: "SVN Gilroy Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("SVN Gilroy Bold"), url("/font/SVN-Gilroy Bold.otf") format("opentype");
+  src: local("SVN Gilroy Bold"), url("../font/SVN-Gilroy Bold.otf") format("opentype");
 }
 
 .swiper-container {
